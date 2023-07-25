@@ -1,19 +1,26 @@
+# Warning
 
-The Offline Windows Password Editor
+⚠️**This is not the official repository of the tool and I'm not linked and didn't contribute in any way to this tool. The purpose of this repository is ONLY to ARCHIVE it on github**⚠️ 
 
-(c) 1997-2014 Petter Nordahl-Hagen
+The official website (if still online when you read this) is here -> http://pogostick.net/~pnh/ntpasswd/
 
-This is free software, licensed under the following:
+Except the warning you just read, all the data on this repository comes from the source code zip from the official website downloaded here -> http://pogostick.net/~pnh/ntpasswd/chntpw-source-140201.zip
 
-"ntreg" (the registry library) and
-"libsam" (SAM manipulation library, user, groups etc)
-is licensed under the GNU Lesser Public License. See LGPL.txt.
+# README
 
-"chntpw" (the password reset / registry editor frontend)
-"reged" (registry editor, export and import tool)
-"sampasswd" (password reset command line program)
-"samusrgrp" (user and group command line program)
-is licensed under the GNU General Public License, see GPL.txt.
+*The Offline Windows Password Editor © 1997-2014 Petter Nordahl-Hagen*
+
+This is a free software.
+
+Licensed under GNU Lesser Public License (See LGPL.txt):
+- "ntreg" (the registry library) and
+- "libsam" (SAM manipulation library, user, groups etc)
+
+Licensed under the GNU General Public License (see GPL.txt:
+- "chntpw" (the password reset / registry editor frontend)
+- "reged" (registry editor, export and import tool)
+- "sampasswd" (password reset command line program)
+- "samusrgrp" (user and group command line program)
 
 
 For manual to the different commands, see MANUAL.txt
@@ -160,8 +167,9 @@ the actual registry tree. (see source code for struct-defines
 and comments on the registry structure)
 
 The usernames are listed in:
-\SAM\Domains\Account\Users\Names\
+`\SAM\Domains\Account\Users\Names\`
 
+```
 [2d18] \SAM\Domains\Account\Users\Names> l
 ls of node at offset 0x2d1c
 Node has 4 subkeys and 1 values
@@ -170,10 +178,12 @@ nk-offset      name
 0x003630 - <Guest>
 0x001c88 - <luser>
 0x003428 - <pnh>
+```
 
 Each name is a subkey, with one namless value containing
 the RID.
 
+```
 [2d18] \SAM\Domains\Account\Users\Names> cd pnh
 
 [3428] \SAM\Domains\Account\Users\Names\pnh> l
@@ -203,5 +213,5 @@ Node has 0 subkeys and 2 values
 vk-offs    size    type           name
 0x0035a8    80  REG_BINARY       <F>
 0x003228   508  REG_BINARY       <V>
-
+```
 For more techincal info, look it up in the source code.
